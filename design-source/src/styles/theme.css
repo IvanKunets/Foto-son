@@ -1,0 +1,256 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* === Фото-сон Design System === */
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* Color Palette */
+  --color-charcoal: #1C1C1E;
+  --color-gold: #C9A84C;
+  --color-offwhite: #F8F6F2;
+  --color-white: #FFFFFF;
+  --color-gray: #6B6B6B;
+  --color-border: #E0DDD8;
+
+  /* Semantic Colors */
+  --background: #F8F6F2;
+  --foreground: #1C1C1E;
+  --card: #FFFFFF;
+  --card-foreground: #1C1C1E;
+  --primary: #C9A84C;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1C1C1E;
+  --secondary-foreground: #FFFFFF;
+  --muted: #6B6B6B;
+  --muted-foreground: #6B6B6B;
+  --accent: #C9A84C;
+  --accent-foreground: #FFFFFF;
+  --border: #E0DDD8;
+  --input: #E0DDD8;
+  --input-background: #FFFFFF;
+  --ring: #C9A84C;
+  --error: #DC2626;
+  --error-foreground: #FFFFFF;
+
+  /* Spacing System (8px base grid) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+
+  /* Border Radius */
+  --radius-sm: 4px;   /* inputs */
+  --radius-md: 8px;   /* cards */
+  --radius-pill: 24px; /* pill buttons */
+
+  /* Typography Scale */
+  --text-h1: 48px;
+  --text-h2: 36px;
+  --text-h3: 24px;
+  --text-h4: 20px;
+  --text-body: 16px;
+  --text-caption: 14px;
+  --text-label: 14px;
+
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+
+  /* Shadows */
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-ring: var(--ring);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-pill);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  /* Typography Styles */
+  h1 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h1);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-charcoal);
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-charcoal);
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h3);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-charcoal);
+  }
+
+  h4 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h4);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-charcoal);
+  }
+
+  p {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-body);
+    color: var(--color-charcoal);
+  }
+
+  label {
+    font-family: var(--font-body);
+    font-size: var(--text-label);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-body);
+    color: var(--color-charcoal);
+  }
+
+  button {
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-body);
+  }
+
+  input, textarea {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-body);
+  }
+}
+
+/* Button Component Styles */
+.btn {
+  padding: 12px 32px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-body);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #B39643;
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-charcoal);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-charcoal);
+  border: none;
+}
+
+.btn-ghost:hover {
+  background-color: rgba(28, 28, 30, 0.05);
+}
+
+/* Input Component Styles */
+.input {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--input-background);
+  color: var(--foreground);
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+
+.input.error {
+  border-color: var(--color-error);
+}
+
+.input.error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+/* Card Component Styles */
+.card {
+  background-color: var(--card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+}
+
+/* Caption Text */
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-body);
+  color: var(--color-gray);
+}
