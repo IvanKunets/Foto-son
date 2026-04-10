@@ -1,58 +1,137 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src="public/images/logo.png" alt="Фото-сон Logo" width="180">
 </p>
 
-## About Laravel
+<p align="center">
+    <b>Фото-сон — веб-сайт фотосалона на Laravel</b><br/>
+    Полноценный дипломный fullstack-проект: публичная часть сайта + серверная логика на Laravel и MySQL.
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+    <a href="https://www.php.net/"><img src="https://img.shields.io/badge/PHP-8.x-777BB4?style=flat&logo=php&logoColor=white" alt="PHP"></a>
+    <a href="https://laravel.com/"><img src="https://img.shields.io/badge/Laravel-11.x-FF2D20?style=flat&logo=laravel&logoColor=white" alt="Laravel"></a>
+    <a href="https://www.mysql.com/"><img src="https://img.shields.io/badge/MySQL-8.x-4479A1?style=flat&logo=mysql&logoColor=white" alt="MySQL"></a>
+    <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-build-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite"></a>
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## О проекте
 
-## Learning Laravel
+«Фото-сон» — это веб-сайт фотосалона, разработанный как дипломный fullstack-проект на Laravel.[file:1]  
+Сайт включает публичную часть для клиентов и серверную логику с продуманной структурой БД, миграциями и маршрутизацией, готовую к использованию и дальнейшему расширению административной панелью.[file:1]
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Основные задачи, которые решает сайт:
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- представить фотосалон и его услуги в интернете;
+- показать портфолио выполненных работ;
+- собрать отзывы клиентов;
+- дать возможность оформить заявку на услуги через веб-форму.[file:1]
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Основной функционал
 
-## Agentic Development
+Реализован следующий функционал пользовательской части:
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- **Главная страница** — краткое описание фотосалона, ключевые преимущества и CTA для записи;[file:1]
+- **Услуги** — перечень услуг с описанием и стоимостью;[file:1]
+- **Галерея** — примеры работ, сгруппированные по категориям;[file:1]
+- **Отзывы** — блок клиентских отзывов;[file:1]
+- **Контакты** — контактная информация, карта, форма обратной связи;[file:1]
+- **Заявка на услугу** — форма, связывающая клиента и фотосалон (данные уходят на серверную часть).[file:1]
+
+На серверной стороне:
+
+- модели и миграции для сущностей: услуги, категории галереи, фотографии, отзывы, заказы/заявки, пользователи;[file:1]
+- маршрутизация в `routes/web.php` для всех публичных страниц;[file:1]
+- Blade-шаблоны для пользовательской части с общей layout-структурой;[file:1]
+- базовая структура для дальнейшего подключения административной части (панель управления контентом и заказами).[file:1]
+
+## Используемые технологии
+
+Проект построен на следующем стеке:[file:1]
+
+- **Backend:** PHP 8+, Laravel  
+- **Frontend:** HTML5, CSS3, JavaScript, Blade  
+- **База данных:** MySQL (структура оформлена через migrations)  
+- **Сборка frontend-ресурсов:** Vite  
+- **Среда разработки:** Laragon  
+- **Контроль версий:** Git + GitHub  
+
+## Структура проекта
+
+Ключевые каталоги и файлы:
+
+- `app/Http/Controllers` — контроллеры публичной части сайта;
+- `app/Models` — Eloquent-модели (услуги, галерея, отзывы, заказы и т.д.);
+- `database/migrations` — миграции, описывающие структуру БД фотосалона;
+- `resources/views` — Blade-шаблоны страниц (главная, услуги, галерея, отзывы, контакты);
+- `public/` — публичные ресурсы (CSS, JS, изображения, точка входа `index.php`);
+- `routes/web.php` — маршруты пользовательской части;
+- `design-source/` — исходные материалы по дизайну интерфейса и UI-компонентам;
+- `README.md` — описание проекта и инструкции по развёртыванию.
+
+## Установка и запуск
+
+Ниже описан типичный сценарий развёртывания проекта локально.
+
+### 1. Клонирование репозитория
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/IvanKunets/Foto-son.git
+cd Foto-son
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Установка PHP-зависимостей
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Установка frontend-зависимостей
 
-## Code of Conduct
+```bash
+npm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Настройка переменных окружения
 
-## Security Vulnerabilities
+Создайте файл `.env` на основе примера:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+cp .env.example .env
+```
 
-## License
+Затем укажите параметры подключения к базе данных (DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD) и другие нужные настройки.[file:1]
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. Генерация ключа приложения
+
+```bash
+php artisan key:generate
+```
+
+### 6. Миграции базы данных
+
+```bash
+php artisan migrate
+```
+
+При необходимости можно добавить сиды для тестовых данных.
+
+### 7. Запуск приложения
+
+```bash
+php artisan serve
+npm run dev
+```
+
+После этого сайт будет доступен по адресу, который выведет Laravel (обычно `http://127.0.0.1:8000`).[web:113]
+
+## Статус проекта
+
+Проект находится в завершённом состоянии для пользовательской части сайта: реализованы основные страницы, схема базы данных, маршруты и шаблоны.[file:1]  
+Архитектура backend’а и структура БД спроектированы так, чтобы на их основе можно было развивать полноценную административную панель (управление услугами, галереей, отзывами и заказами).[file:1]
+
+## Назначение репозитория
+
+Репозиторий использован в качестве части дипломного проекта по теме  
+**«Разработка сайта для фотосалона „Фото-сон“»**: он демонстрирует структуру Laravel-приложения, реализацию публичной части и подход к проектированию серверной логики и базы данных.[file:2]
