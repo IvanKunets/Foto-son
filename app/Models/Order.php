@@ -10,6 +10,16 @@ class Order extends Model
 {
     use HasFactory;
 
+    /**
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'preferred_date' => 'date',
+        ];
+    }
+
     protected $fillable = [
         'client_name',
         'client_phone',

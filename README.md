@@ -1,3 +1,16 @@
+## Фото-сон — установка
+
+Дипломный проект сайта фотосалона на Laravel и MySQL.
+
+1. Скопируйте `.env.example` в `.env`, сгенерируйте ключ: `php artisan key:generate`.
+2. Укажите в `.env` подключение к MySQL: `DB_CONNECTION=mysql`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`.
+3. Выполните миграции: `php artisan migrate`.
+4. Создайте символическую ссылку на файлы из `storage`: `php artisan storage:link`.
+5. Заполните БД тестовыми данными и учётной записью администратора: `php artisan db:seed`.  
+   Вход в админку: `/admin/login`, e-mail `admin@foto-son.ru`, пароль `admin123`.
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

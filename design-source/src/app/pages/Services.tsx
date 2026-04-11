@@ -104,9 +104,9 @@ export function Services() {
   };
 
   return (
-    <div className="pt-[72px]">
+    <div className="pt-[60px] md:pt-[72px]">
       {/* Hero Section */}
-      <section className="relative h-[280px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[200px] md:h-[280px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -121,11 +121,11 @@ export function Services() {
           }}
         ></div>
 
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-white mb-3" style={{ fontSize: '48px' }}>
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-white mb-2 md:mb-3 text-[36px] md:text-[48px]">
             Услуги
           </h1>
-          <p className="text-[#E0DDD8] text-sm" style={{ fontFamily: 'var(--font-body)' }}>
+          <p className="text-[#E0DDD8] text-xs md:text-sm" style={{ fontFamily: 'var(--font-body)' }}>
             <Link to="/" className="hover:text-white transition-colors no-underline text-[#E0DDD8]">
               Главная
             </Link>
@@ -135,26 +135,26 @@ export function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 bg-white">
-        <div className="max-w-[1440px] mx-auto px-8">
-          <h2 className="text-center mb-16">Наши услуги</h2>
-          <div className="grid grid-cols-3 gap-8">
+      <section className="py-8 md:py-16 bg-white">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+          <h2 className="text-center mb-8 md:mb-16 text-[32px] md:text-[36px]">Наши услуги</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="card transition-all duration-300 hover:shadow-xl"
               >
-                <div className="mb-6">
+                <div className="mb-4 md:mb-6">
                   <ServiceIcon type={service.iconType} />
                 </div>
-                <h3 className="mb-4">{service.title}</h3>
-                <p className="mb-6 text-[var(--color-gray)] leading-relaxed">
+                <h3 className="mb-3 md:mb-4 text-[20px] md:text-[24px]">{service.title}</h3>
+                <p className="mb-4 md:mb-6 text-[var(--color-gray)] leading-relaxed text-sm md:text-base">
                   {service.description}
                 </p>
 
-                <div className="mb-6 pb-6 border-b border-[var(--border)]">
+                <div className="mb-4 md:mb-6 pb-4 md:pb-6 border-b border-[var(--border)]">
                   <p
-                    className="text-3xl mb-2"
+                    className="text-2xl md:text-3xl mb-1 md:mb-2"
                     style={{
                       color: 'var(--color-gold)',
                       fontWeight: 'var(--font-weight-bold)',
@@ -162,18 +162,18 @@ export function Services() {
                   >
                     от {service.price} ₽
                   </p>
-                  <p className="text-sm text-[var(--color-gray)]">
+                  <p className="text-xs md:text-sm text-[var(--color-gray)]">
                     Длительность: {service.duration}
                   </p>
                 </div>
 
-                <div className="mb-6">
-                  <p className="font-medium mb-3">Что включено:</p>
-                  <ul className="space-y-2">
+                <div className="mb-4 md:mb-6">
+                  <p className="font-medium mb-2 md:mb-3 text-sm md:text-base">Что включено:</p>
+                  <ul className="space-y-1.5 md:space-y-2">
                     {service.includes.map((item, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-2 text-sm text-[var(--color-gray)]"
+                        className="flex items-start gap-2 text-xs md:text-sm text-[var(--color-gray)]"
                       >
                         <svg
                           width="16"
@@ -197,7 +197,7 @@ export function Services() {
                   </ul>
                 </div>
 
-                <Link to="/contacts">
+                <Link to="/contacts" className="block">
                   <button className="btn btn-primary w-full">Записаться</button>
                 </Link>
               </div>
@@ -207,141 +207,29 @@ export function Services() {
       </section>
 
       {/* CTA Form Section */}
-      <section className="py-16" style={{ backgroundColor: 'var(--color-gold)' }}>
-        <div className="max-w-[1440px] mx-auto px-8">
-          <div className="grid grid-cols-2 gap-16 items-center">
-            {/* Left Column - Text */}
-            <div>
-              <h2 className="text-white mb-6" style={{ fontSize: '36px' }}>
-                Не нашли нужную услугу?
-              </h2>
-              <p className="text-white text-lg leading-relaxed">
-                Оставьте заявку — мы свяжемся с вами и подберём вариант
-              </p>
-            </div>
-
-            {/* Right Column - Form */}
-            <div
-              className="bg-white rounded-lg p-6"
+      <section
+        className="py-12 md:py-24"
+        style={{ backgroundColor: 'var(--color-gold)' }}
+      >
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 text-center">
+          <h2 className="text-white mb-3 md:mb-4 text-[28px] md:text-[48px]">
+            Не нашли нужную услугу?
+          </h2>
+          <p className="text-white text-base md:text-lg mb-6 md:mb-8" style={{ fontFamily: 'var(--font-body)' }}>
+            Оставьте заявку — мы свяжемся с вами и подберём вариант
+          </p>
+          <Link to="/contacts" className="block md:inline-block">
+            <button
+              className="btn text-base md:text-lg px-8 md:px-12 py-3 md:py-4 w-full md:w-auto"
               style={{
-                borderRadius: 'var(--radius-md)',
-                boxShadow: 'var(--shadow-card)',
+                backgroundColor: 'white',
+                color: 'var(--color-charcoal)',
+                border: 'none',
               }}
             >
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block mb-2">Ваше имя</label>
-                  <input
-                    type="text"
-                    className="input"
-                    placeholder="Иван Иванов"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block mb-2">Номер телефона</label>
-                  <input
-                    type="tel"
-                    className="input"
-                    placeholder="+7 (863) ___-__-__"
-                    value={formData.phone}
-                    onChange={(e) =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block mb-2">Выберите услугу</label>
-                  <div className="relative">
-                    <button
-                      type="button"
-                      className="input w-full flex items-center justify-between cursor-pointer"
-                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                      style={{
-                        borderColor: isDropdownOpen
-                          ? 'var(--color-gold)'
-                          : 'var(--color-border)',
-                      }}
-                    >
-                      <span
-                        className={
-                          formData.service ? '' : 'text-[var(--color-gray)]'
-                        }
-                      >
-                        {formData.service || 'Выберите услугу'}
-                      </span>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style={{
-                          transform: isDropdownOpen
-                            ? 'rotate(180deg)'
-                            : 'rotate(0deg)',
-                          transition: 'transform 0.2s',
-                        }}
-                      >
-                        <path
-                          d="M5 7.5L10 12.5L15 7.5"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-
-                    {isDropdownOpen && (
-                      <div
-                        className="absolute top-full left-0 right-0 mt-2 bg-white rounded border border-[var(--color-border)] shadow-lg z-10"
-                        style={{
-                          borderRadius: 'var(--radius-sm)',
-                          boxShadow: 'var(--shadow-hover)',
-                        }}
-                      >
-                        {serviceOptions.map((option, index) => (
-                          <button
-                            key={index}
-                            type="button"
-                            className="w-full text-left px-4 py-3 hover:bg-[var(--background)] transition-colors"
-                            onClick={() => {
-                              setFormData({ ...formData, service: option });
-                              setIsDropdownOpen(false);
-                            }}
-                          >
-                            {option}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn w-full"
-                  style={{
-                    backgroundColor: 'var(--color-charcoal)',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: 'var(--radius-pill)',
-                    padding: '12px 32px',
-                  }}
-                >
-                  Отправить заявку
-                </button>
-              </form>
-            </div>
-          </div>
+              Оставить заявку
+            </button>
+          </Link>
         </div>
       </section>
     </div>

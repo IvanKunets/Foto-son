@@ -1,3 +1,5 @@
+import image_4b08fd5937cc93d3d2bfd40e023d8102c6bdfe29 from 'figma:asset/4b08fd5937cc93d3d2bfd40e023d8102c6bdfe29.png'
+import image_7c9c64c85f8110788026368e47b9f486d1e6121b from 'figma:asset/7c9c64c85f8110788026368e47b9f486d1e6121b.png'
 import { useState } from 'react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
@@ -25,10 +27,10 @@ export function Contacts() {
   };
 
   return (
-    <div className="pt-[72px]">
+    <div className="pt-[60px] md:pt-[72px]">
       {/* Hero */}
       <section
-        className="relative h-[280px] flex items-center justify-center"
+        className="relative h-[200px] md:h-[280px] flex items-center justify-center"
         style={{
           backgroundImage:
             'url(https://images.unsplash.com/photo-1759853900057-bd622dd45028?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwcGhvdG9ncmFwaHklMjBzdHVkaW8lMjBtb29keSUyMGxpZ2h0aW5nJTIwYmFja2Ryb3B8ZW58MXx8fHwxNzc1NTY2NjE0fDA&ixlib=rb-4.1.0&q=80&w=1080)',
@@ -44,65 +46,65 @@ export function Contacts() {
               'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7))',
           }}
         />
-        <div className="relative z-10 text-center text-white">
-          <h1 className="mb-3 text-[#ffffff]">Контакты</h1>
-          <p className="text-sm" style={{ color: '#E0DDD8' }}>
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="mb-2 md:mb-3 text-[#ffffff] text-[36px] md:text-[48px]">Контакты</h1>
+          <p className="text-xs md:text-sm" style={{ color: '#E0DDD8' }}>
             Главная / Контакты
           </p>
         </div>
       </section>
 
       {/* Contact Info & Form */}
-      <section className="py-16 bg-white">
-        <div className="max-w-[1440px] mx-auto px-8">
-          <div className="grid grid-cols-5 gap-12">
+      <section className="py-8 md:py-16 bg-white">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12">
             {/* Contact Information */}
-            <div className="col-span-2">
-              <h2 className="mb-8">Как с нами связаться</h2>
+            <div className="md:col-span-2">
+              <h2 className="mb-6 md:mb-8 text-[28px] md:text-[36px]">Как с нами связаться</h2>
 
-              <div className="space-y-8">
+              <div className="space-y-6 md:space-y-8">
                 <div>
-                  <h4 className="mb-3">Телефон</h4>
+                  <h4 className="mb-2 md:mb-3 text-[18px] md:text-[20px]">Телефон</h4>
                   <a
                     href="tel:+78631234567"
-                    className="text-xl text-[var(--color-gold)] hover:underline no-underline"
+                    className="text-lg md:text-xl text-[var(--color-gold)] hover:underline no-underline block py-2"
                   >
                     +7 (863) 123-45-67
                   </a>
-                  <p className="text-sm text-[var(--color-gray)] mt-2">
+                  <p className="text-xs md:text-sm text-[var(--color-gray)] mt-1 md:mt-2">
                     Ежедневно с 10:00 до 20:00
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="mb-3">Email</h4>
+                  <h4 className="mb-2 md:mb-3 text-[18px] md:text-[20px]">Email</h4>
                   <a
                     href="mailto:info@photoson.ru"
-                    className="text-xl text-[var(--color-gold)] hover:underline no-underline"
+                    className="text-lg md:text-xl text-[var(--color-gold)] hover:underline no-underline block py-2"
                   >
                     info@photoson.ru
                   </a>
-                  <p className="text-sm text-[var(--color-gray)] mt-2">
+                  <p className="text-xs md:text-sm text-[var(--color-gray)] mt-1 md:mt-2">
                     Ответим в течение 2 часов
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="mb-3">Адрес студии</h4>
-                  <p className="text-lg mb-2">
-                    г. Ростов-на-Дону, ул. Большая Садовая, д. 12
+                  <h4 className="mb-2 md:mb-3 text-[18px] md:text-[20px]">Адрес студии</h4>
+                  <p className="text-base md:text-lg mb-2">
+                    г. Ростов-на-Дону, ул. Большая Садовая, д. 50
                   </p>
-                  
+
                 </div>
 
                 <div>
-                  <h4 className="mb-3">Режим работы</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
+                  <h4 className="mb-2 md:mb-3 text-[18px] md:text-[20px]">Режим работы</h4>
+                  <div className="space-y-2 text-sm md:text-base">
+                    <div className="flex justify-between gap-4">
                       <span>Понедельник - Пятница</span>
                       <span className="font-medium">10:00 - 20:00</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between gap-4">
                       <span>Суббота - Воскресенье</span>
                       <span className="font-medium">11:00 - 18:00</span>
                     </div>
@@ -110,11 +112,11 @@ export function Contacts() {
                 </div>
 
                 <div>
-                  <h4 className="mb-3">Социальные сети</h4>
+                  <h4 className="mb-2 md:mb-3 text-[18px] md:text-[20px]">Социальные сети</h4>
                   <div className="flex gap-3">
                     <a
                       href="#"
-                      className="w-12 h-12 rounded-full bg-[var(--color-gold)] hover:bg-[var(--color-charcoal)] transition-colors flex items-center justify-center text-white"
+                      className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-[var(--color-gold)] hover:bg-[var(--color-charcoal)] transition-colors flex items-center justify-center text-white"
                       aria-label="Instagram"
                     >
                       <svg
@@ -128,7 +130,7 @@ export function Contacts() {
                     </a>
                     <a
                       href="#"
-                      className="w-12 h-12 rounded-full bg-[var(--color-gold)] hover:bg-[var(--color-charcoal)] transition-colors flex items-center justify-center text-white"
+                      className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-[var(--color-gold)] hover:bg-[var(--color-charcoal)] transition-colors flex items-center justify-center text-white"
                       aria-label="VK"
                     >
                       <svg
@@ -142,7 +144,7 @@ export function Contacts() {
                     </a>
                     <a
                       href="#"
-                      className="w-12 h-12 rounded-full bg-[var(--color-gold)] hover:bg-[var(--color-charcoal)] transition-colors flex items-center justify-center text-white"
+                      className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-[var(--color-gold)] hover:bg-[var(--color-charcoal)] transition-colors flex items-center justify-center text-white"
                       aria-label="Telegram"
                     >
                       <svg
@@ -160,12 +162,12 @@ export function Contacts() {
             </div>
 
             {/* Contact Form */}
-            <div className="col-span-3">
-              <div className="card" style={{ padding: 'var(--space-6)' }}>
-                <h2 className="mb-8">Оставить заявку</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="md:col-span-3">
+              <div className="card p-4 md:p-8">
+                <h2 className="mb-6 md:mb-8 text-[28px] md:text-[36px]">Оставить заявку</h2>
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                   <div>
-                    <label className="block mb-2">Ваше имя *</label>
+                    <label className="block mb-2 text-sm md:text-base">Ваше имя *</label>
                     <input
                       type="text"
                       name="name"
@@ -177,9 +179,9 @@ export function Contacts() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div>
-                      <label className="block mb-2">Телефон *</label>
+                      <label className="block mb-2 text-sm md:text-base">Телефон *</label>
                       <input
                         type="tel"
                         name="phone"
@@ -191,7 +193,7 @@ export function Contacts() {
                       />
                     </div>
                     <div>
-                      <label className="block mb-2">Email</label>
+                      <label className="block mb-2 text-sm md:text-base">Email</label>
                       <input
                         type="email"
                         name="email"
@@ -204,13 +206,20 @@ export function Contacts() {
                   </div>
 
                   <div>
-                    <label className="block mb-2">Тип съемки *</label>
+                    <label className="block mb-2 text-sm md:text-base">Тип съемки *</label>
                     <select
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
                       className="input"
                       required
+                      style={{
+                        appearance: 'none',
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%236B6B6B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'right 16px center',
+                        paddingRight: '40px',
+                      }}
                     >
                       <option value="">Выберите услугу</option>
                       <option value="portrait">Портретная съемка</option>
@@ -227,7 +236,7 @@ export function Contacts() {
                   </div>
 
                   <div>
-                    <label className="block mb-2">Сообщение</label>
+                    <label className="block mb-2 text-sm md:text-base">Сообщение</label>
                     <textarea
                       name="message"
                       value={formData.message}
@@ -238,11 +247,11 @@ export function Contacts() {
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn btn-primary w-full text-lg py-4">
+                  <button type="submit" className="btn btn-primary w-full text-base md:text-lg py-3 md:py-4">
                     Отправить заявку
                   </button>
 
-                  <p className="text-sm text-[var(--color-gray)] text-center">
+                  <p className="text-xs md:text-sm text-[var(--color-gray)] text-center">
                     Нажимая кнопку, вы соглашаетесь с политикой
                     конфиденциальности
                   </p>
@@ -254,22 +263,20 @@ export function Contacts() {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 bg-[var(--background)]">
-        <div className="max-w-[1440px] mx-auto px-8">
-          <div
-            className="w-full rounded-lg overflow-hidden relative"
-            style={{ height: '500px' }}
-          >
+      <section className="py-8 md:py-16 bg-[var(--background)]">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+          <div className="w-full rounded-lg overflow-hidden relative h-[300px] md:h-[500px]">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1763462929966-23955f0a8a2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXR5JTIwbWFwJTIwc3RyZWV0JTIwdmlldyUyMHVyYmFuJTIwcGxhbm5pbmd8ZW58MXx8fHwxNzc1NTY2NjExfDA&ixlib=rb-4.1.0&q=80&w=1080"
+              src={image_4b08fd5937cc93d3d2bfd40e023d8102c6bdfe29}
               alt="Карта - г. Ростов-на-Дону, ул. Большая Садовая, д. 12"
               className="w-full h-full object-cover"
             />
             {/* Gold location pin overlay */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full flex flex-col items-center">
               <svg
-                width="48"
-                height="48"
+                width="40"
+                height="40"
+                className="md:w-[48px] md:h-[48px]"
                 viewBox="0 0 24 24"
                 fill="var(--color-gold)"
                 stroke="var(--color-charcoal)"
@@ -279,11 +286,10 @@ export function Contacts() {
                 <circle cx="12" cy="10" r="3" fill="var(--color-charcoal)"></circle>
               </svg>
               <div
-                className="mt-2 px-3 py-1 rounded"
+                className="mt-1 md:mt-2 px-2 md:px-3 py-1 rounded text-xs md:text-sm"
                 style={{
                   backgroundColor: 'var(--color-gold)',
                   color: 'var(--color-charcoal)',
-                  fontSize: '14px',
                   fontWeight: '500',
                 }}
               >

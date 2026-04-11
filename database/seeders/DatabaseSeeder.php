@@ -21,11 +21,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
-            'name' => 'Администратор',
-            'email' => 'admin@foto-son.ru',
-            'password' => bcrypt('secret'),
-        ]);
+        User::query()->updateOrCreate(
+            ['email' => 'admin@foto-son.ru'],
+            [
+                'name' => 'Администратор',
+                'password' => 'admin123',
+            ]
+        );
 
         $servicesData = [
             ['title' => 'Портретная съемка', 'price' => 300.00],

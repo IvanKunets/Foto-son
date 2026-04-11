@@ -193,25 +193,27 @@ export function Reviews() {
       {/* CTA Section */}
       <section className="py-24" style={{ backgroundColor: 'var(--color-gold)' }}>
         <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2 className="text-white mb-4" style={{ fontSize: '36px' }}>
+          <h2 className="text-white mb-4" style={{ fontSize: '48px' }}>
             Станьте частью наших довольных клиентов
           </h2>
           <p className="text-white text-lg mb-8" style={{ fontFamily: 'var(--font-body)' }}>
             Запишитесь на фотосессию и убедитесь в качестве наших услуг лично
           </p>
+          <Link to="/contacts">
           <button
-            className="transition-all duration-300 hover:bg-white hover:text-[var(--color-gold)]"
+            className="btn text-lg px-12 py-4"
             style={{
               border: '2px solid white',
-              color: 'white',
+              color: 'var(--color-charcoal)',
               borderRadius: '24px',
               padding: '14px 48px',
-              backgroundColor: 'transparent',
+              backgroundColor: 'white',
               fontWeight: 'var(--font-weight-medium)',
             }}
           >
             Оставить заявку
           </button>
+          </Link>
         </div>
       </section>
     </div>

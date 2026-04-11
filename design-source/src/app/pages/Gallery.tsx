@@ -100,9 +100,9 @@ export function Gallery() {
       : photos.filter((photo) => photo.category === activeFilter);
 
   return (
-    <div className="pt-[72px]" style={{ backgroundColor: 'var(--color-offwhite)' }}>
+    <div className="pt-[60px] md:pt-[72px]" style={{ backgroundColor: 'var(--color-offwhite)' }}>
       {/* Hero Section */}
-      <section className="relative h-[280px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[200px] md:h-[280px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -117,11 +117,11 @@ export function Gallery() {
           }}
         ></div>
 
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-white mb-3" style={{ fontSize: '48px' }}>
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-white mb-2 md:mb-3 text-[36px] md:text-[48px]">
             Галерея работ
           </h1>
-          <p className="text-[#E0DDD8] text-sm" style={{ fontFamily: 'var(--font-body)' }}>
+          <p className="text-[#E0DDD8] text-xs md:text-sm" style={{ fontFamily: 'var(--font-body)' }}>
             <Link to="/" className="hover:text-white transition-colors no-underline text-[#E0DDD8]">
               Главная
             </Link>
@@ -131,14 +131,14 @@ export function Gallery() {
       </section>
 
       {/* Filter Bar */}
-      <section className="py-12">
-        <div className="max-w-[1440px] mx-auto px-8">
-          <div className="flex gap-3 justify-center flex-wrap">
+      <section className="py-6 md:py-12">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+          <div className="flex gap-2 md:gap-3 md:justify-center md:flex-wrap overflow-x-auto pb-2 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
             {filters.map((filter) => (
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-6 py-3 transition-all duration-300 ${
+                className={`px-4 md:px-6 py-2 md:py-3 transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
                   activeFilter === filter.id
                     ? 'bg-[var(--color-gold)] text-white border-[var(--color-gold)]'
                     : 'bg-white text-[#6B6B6B] border-[#E0DDD8] hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]'
@@ -147,6 +147,7 @@ export function Gallery() {
                   borderRadius: '24px',
                   border: '1.5px solid',
                   fontWeight: 'var(--font-weight-medium)',
+                  fontSize: '14px',
                 }}
               >
                 {filter.label}
@@ -157,9 +158,9 @@ export function Gallery() {
       </section>
 
       {/* Photo Grid */}
-      <section className="pb-12">
-        <div className="max-w-[1440px] mx-auto px-8">
-          <div className="grid grid-cols-3 gap-4">
+      <section className="pb-8 md:pb-12">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {filteredPhotos.map((photo, index) => (
               <div
                 key={index}
@@ -175,15 +176,15 @@ export function Gallery() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Search className="text-white" size={32} />
+                  <Search className="text-white" size={24} />
                 </div>
               </div>
             ))}
           </div>
 
           {filteredPhotos.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-xl text-[var(--color-gray)]">
+            <div className="text-center py-12 md:py-20">
+              <p className="text-base md:text-xl text-[var(--color-gray)]">
                 Фотографии в этой категории скоро появятся
               </p>
             </div>
@@ -192,17 +193,18 @@ export function Gallery() {
       </section>
 
       {/* Load More Button */}
-      <section className="pb-12">
-        <div className="max-w-[1440px] mx-auto px-8 text-center">
+      <section className="pb-8 md:pb-12">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 text-center">
           <button
-            className="transition-all duration-300 hover:bg-[var(--color-gold)] hover:text-white"
+            className="transition-all duration-300 hover:bg-[var(--color-gold)] hover:text-white w-full md:w-auto"
             style={{
               border: '1.5px solid var(--color-gold)',
               color: 'var(--color-gold)',
               borderRadius: '24px',
-              padding: '14px 48px',
+              padding: '12px 32px',
               backgroundColor: 'transparent',
               fontWeight: 'var(--font-weight-medium)',
+              fontSize: '14px',
             }}
           >
             Загрузить ещё
@@ -211,27 +213,25 @@ export function Gallery() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-24" style={{ backgroundColor: 'var(--color-gold)' }}>
-        <div className="max-w-[1440px] mx-auto px-8 text-center">
-          <h2 className="text-white mb-4" style={{ fontSize: '36px' }}>
+      <section className="py-12 md:py-24" style={{ backgroundColor: 'var(--color-gold)' }}>
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 text-center">
+          <h2 className="text-white mb-3 md:mb-4 text-[28px] md:text-[48px]">
             Хотите такие же фотографии?
           </h2>
-          <p className="text-white text-lg mb-8" style={{ fontFamily: 'var(--font-body)' }}>
-            Запишитесь на съемку прямо сейчас
-          </p>
+          <p className="text-white text-base md:text-lg mb-6 md:mb-8" style={{ fontFamily: 'var(--font-body)' }}>Запишитесь на съемку прямо сейчас</p>
+          <Link to="/contacts" className="block md:inline-block">
           <button
-            className="transition-all duration-300 hover:bg-white hover:text-[var(--color-gold)]"
+            className="btn text-base md:text-lg w-full md:w-auto"
             style={{
-              border: '2px solid white',
-              color: 'white',
-              borderRadius: '24px',
-              padding: '14px 48px',
-              backgroundColor: 'transparent',
-              fontWeight: 'var(--font-weight-medium)',
+              backgroundColor: 'white',
+              border: 'none',
+              color: 'var(--color-charcoal)',
+              padding: '12px 32px',
             }}
           >
             Оставить заявку
           </button>
+          </Link>
         </div>
       </section>
     </div>

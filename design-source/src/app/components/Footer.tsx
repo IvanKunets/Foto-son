@@ -2,12 +2,12 @@ import { Link } from 'react-router';
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--color-charcoal)] text-white py-16">
-      <div className="max-w-[1440px] mx-auto px-8">
-        <div className="grid grid-cols-4 gap-12 mb-12">
+    <footer className="bg-[var(--color-charcoal)] text-white py-8 md:py-16">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
           {/* Logo & Tagline */}
           <div>
-            <h3 className="text-white mb-4">Фото-сон</h3>
+            <h3 className="text-white mb-3 md:mb-4 text-[20px] md:text-[24px]">Фото-сон</h3>
             <p className="text-white/70 text-sm leading-relaxed">
               Профессиональная фотостудия в центре города. Создаём искусство из ваших моментов.
             </p>
@@ -15,21 +15,21 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-white mb-4 text-lg">Навигация</h4>
-            <nav className="flex flex-col gap-3">
-              <Link to="/" className="text-white/70 hover:text-white transition-colors no-underline">
+            <h4 className="text-white mb-3 md:mb-4 text-base md:text-lg">Навигация</h4>
+            <nav className="flex flex-col gap-2 md:gap-3">
+              <Link to="/" className="text-white/70 hover:text-white transition-colors no-underline text-sm md:text-base">
                 Главная
               </Link>
-              <Link to="/services" className="text-white/70 hover:text-white transition-colors no-underline">
+              <Link to="/services" className="text-white/70 hover:text-white transition-colors no-underline text-sm md:text-base">
                 Услуги
               </Link>
-              <Link to="/gallery" className="text-white/70 hover:text-white transition-colors no-underline">
+              <Link to="/gallery" className="text-white/70 hover:text-white transition-colors no-underline text-sm md:text-base">
                 Галерея
               </Link>
-              <Link to="/reviews" className="text-white/70 hover:text-white transition-colors no-underline">
+              <Link to="/reviews" className="text-white/70 hover:text-white transition-colors no-underline text-sm md:text-base">
                 Отзывы
               </Link>
-              <Link to="/contacts" className="text-white/70 hover:text-white transition-colors no-underline">
+              <Link to="/contacts" className="text-white/70 hover:text-white transition-colors no-underline text-sm md:text-base">
                 Контакты
               </Link>
             </nav>
@@ -37,26 +37,26 @@ export function Footer() {
 
           {/* Contacts */}
           <div>
-            <h4 className="text-white mb-4 text-lg">Контакты</h4>
-            <div className="flex flex-col gap-3 text-white/70">
-              <a href="tel:+78631234567" className="hover:text-white transition-colors no-underline">
+            <h4 className="text-white mb-3 md:mb-4 text-base md:text-lg">Контакты</h4>
+            <div className="flex flex-col gap-2 md:gap-3 text-white/70">
+              <a href="tel:+78631234567" className="hover:text-white transition-colors no-underline text-sm md:text-base">
                 +7 (863) 123-45-67
               </a>
-              <p className="text-sm">г. Ростов-на-Дону, ул. Большая Садовая, д. 50</p>
+              <p className="text-sm text-[#ffffffb3]">г. Ростов-на-Дону, ул. Большая Садовая, д. 50</p>
               <div className="text-sm">
-                <p className="mb-1">Пн-Пт: 10:00 - 20:00</p>
-                <p>Сб-Вс: 11:00 - 18:00</p>
+                <p className="mb-1 text-[#ffffffb3]">Пн-Пт: 10:00 - 20:00</p>
+                <p className="text-[#ffffffb3]">Сб-Вс: 11:00 - 18:00</p>
               </div>
             </div>
           </div>
 
           {/* Social */}
           <div>
-            <h4 className="text-white mb-4 text-lg">Социальные сети</h4>
-            <div className="flex gap-4">
+            <h4 className="text-white mb-3 md:mb-4 text-base md:text-lg">Социальные сети</h4>
+            <div className="flex gap-3 md:gap-4">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[var(--color-gold)] transition-colors flex items-center justify-center"
+                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/10 hover:bg-[var(--color-gold)] transition-colors flex items-center justify-center"
                 aria-label="Instagram"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -65,7 +65,7 @@ export function Footer() {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[var(--color-gold)] transition-colors flex items-center justify-center"
+                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/10 hover:bg-[var(--color-gold)] transition-colors flex items-center justify-center"
                 aria-label="VK"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -74,7 +74,7 @@ export function Footer() {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[var(--color-gold)] transition-colors flex items-center justify-center"
+                className="w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/10 hover:bg-[var(--color-gold)] transition-colors flex items-center justify-center"
                 aria-label="Telegram"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -85,7 +85,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center text-white/50 text-sm">
+        <div className="border-t border-white/10 pt-6 md:pt-8 text-center text-white/50 text-xs md:text-sm">
           <p>&copy; 2026 Фото-сон. Все права защищены.</p>
         </div>
       </div>
