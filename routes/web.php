@@ -56,6 +56,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/', [AdminGalleryPhotoController::class, 'index'])->name('index');
             Route::get('create', [AdminGalleryPhotoController::class, 'create'])->name('create');
             Route::post('/', [AdminGalleryPhotoController::class, 'store'])->name('store');
+            Route::get('{id}/edit', [AdminGalleryPhotoController::class, 'edit'])->name('edit');
+            Route::put('{id}', [AdminGalleryPhotoController::class, 'update'])->name('update');
             Route::delete('{id}', [AdminGalleryPhotoController::class, 'destroy'])->name('destroy');
             Route::post('{id}/toggle', [AdminGalleryPhotoController::class, 'toggleVisible'])->name('toggle');
         });

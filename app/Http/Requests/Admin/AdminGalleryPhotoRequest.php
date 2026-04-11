@@ -13,7 +13,7 @@ class AdminGalleryPhotoRequest extends FormRequest
 
     public function rules(): array
     {
-        $imageRules = $this->isMethod('POST')
+        $imageRules = $this->routeIs('admin.gallery.photos.store')
             ? ['required', 'image', 'max:4096']
             : ['nullable', 'image', 'max:4096'];
 

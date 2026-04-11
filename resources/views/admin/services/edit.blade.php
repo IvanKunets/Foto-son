@@ -19,13 +19,14 @@
         </div>
         <div>
             <label for="price">Цена (₽)</label>
-            <input type="number" id="price" name="price" value="{{ old('price', $service->price) }}" step="0.01" min="0">
+            <input type="number" id="price" name="price" value="{{ old('price', (int) $service->price) }}" min="0" step="1" required>
             @error('price')<p class="field-error">{{ $message }}</p>@enderror
         </div>
         <div>
-            <label for="image">Новое изображение (оставьте пустым, чтобы не менять)</label>
+            <label for="image">Изображение</label>
             @if ($service->image)
-                <p><img class="admin-thumb" src="{{ asset(\Illuminate\Support\Facades\Storage::url($service->image)) }}" alt="Текущее изображение"></p>
+                <p><img src="{{ \Illuminate\Support\Facades\Storage::url($service->image) }}" alt="" style="max-height:120px;"></p>
+                <p>Текущее фото. Загрузите новое, чтобы заменить.</p>
             @endif
             <input type="file" id="image" name="image" accept="image/*">
             @error('image')<p class="field-error">{{ $message }}</p>@enderror

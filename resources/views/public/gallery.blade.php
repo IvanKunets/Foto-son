@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@use('Illuminate\Support\Facades\Storage')
 
 @section('title', 'Галерея — Фото-сон')
 
@@ -26,7 +27,11 @@
                         @if($category->photos->isNotEmpty())
                             @foreach($category->photos as $photo)
                                 <figure class="gallery-item" data-category="{{ $category->slug }}">
-                                    <img src="{{ asset($photo->image) }}" alt="{{ $photo->alt ?: 'Фото категории ' . $category->name }}" onerror="this.onerror=null;this.src='{{ asset('images/placeholders/gallery-photo.svg') }}';">
+                                    @if ($photo->image)
+                                        <img src="{{ Storage::url($photo->image) }}" alt="{{ $photo->alt ?: 'Фото категории ' . $category->name }}" loading="lazy">
+                                    @else
+                                        <div class="gallery-item__placeholder">Фото не загружено</div>
+                                    @endif
                                     <figcaption>{{ $category->name }}</figcaption>
                                 </figure>
                             @endforeach

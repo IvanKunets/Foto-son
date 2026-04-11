@@ -76,7 +76,9 @@
                     <tr>
                         <td>
                             @if ($photo->image)
-                                <img class="admin-thumb" src="{{ asset(\Illuminate\Support\Facades\Storage::url($photo->image)) }}" alt="{{ $photo->alt }}">
+                                <img src="{{ \Illuminate\Support\Facades\Storage::url($photo->image) }}" alt="{{ $photo->alt }}" style="max-height:60px;">
+                            @else
+                                нет фото
                             @endif
                         </td>
                         <td>{{ $photo->category?->name ?? '—' }}</td>
@@ -90,6 +92,7 @@
                             @endif
                         </td>
                         <td>
+                            <a href="{{ route('admin.gallery.photos.edit', $photo->id) }}" class="btn btn-secondary btn-sm">Редактировать</a>
                             <form method="post" action="{{ route('admin.gallery.photos.toggle', $photo->id) }}" class="inline-form" style="display:inline">
                                 @csrf
                                 <button type="submit" class="btn btn-secondary btn-sm">{{ $photo->is_visible ? 'Скрыть' : 'Показать' }}</button>

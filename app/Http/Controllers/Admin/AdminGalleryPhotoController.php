@@ -43,6 +43,43 @@ class AdminGalleryPhotoController extends Controller
             ->with('success', 'Фотография добавлена.');
     }
 
+    public function edit(int $id): View
+    {
+        $photo = GalleryPhoto::query()->findOrFail($id);
+
+        $categories = GalleryCategory::query()
+            ->orderBy('sort_order')
+            ->get();
+
+        return view('admin.gallery.photos.edit', compact('photo', 'categories'));
+    }
+
+    public function update(AdminGalleryPhotoRequest $request, int $id): RedirectResponse
+    {
+        $photo = GalleryPhoto::query()->findOrFail($id);
+        $validated = $request->validated();
+
+        $payload = [
+            'category_id' => $validated['category_id'],
+            'alt' => $validated['alt_text'] ?? null,
+            'is_visible' => $request->boolean('is_visible'),
+            'sort_order' => $validated['sort_order'],
+        ];
+
+        if ($request->hasFile('image')) {
+            if ($photo->image) {
+                Storage::disk('public')->delete($photo->image);
+            }
+            $payload['image'] = $request->file('image')->store('gallery', 'public');
+        }
+
+        $photo->update($payload);
+
+        return redirect()
+            ->route('admin.gallery', ['tab' => 'photos'])
+            ->with('success', 'Фотография обновлена.');
+    }
+
     public function destroy(int $id): RedirectResponse
     {
         $photo = GalleryPhoto::query()->findOrFail($id);

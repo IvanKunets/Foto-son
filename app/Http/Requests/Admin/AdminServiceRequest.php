@@ -20,7 +20,7 @@ class AdminServiceRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
-            'price' => ['nullable', 'numeric', 'min:0'],
+            'price' => ['required', 'integer', 'min:0'],
             'image' => $imageRules,
             'is_visible' => ['sometimes', 'boolean'],
             'sort_order' => ['required', 'integer', 'min:0'],
